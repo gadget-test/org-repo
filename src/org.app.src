@@ -1,0 +1,10 @@
+{application, org,
+ [
+  {description, "ORG (for Gadget)"},
+  {vsn, "0.0.1"},
+  {applications, [kernel, stdlib]},
+  {modules, []},
+  {mod, {dcn, []}},
+  {registered, []}
+ ]
+}.
