@@ -4,7 +4,7 @@
   {vsn, "0.0.1"},
   {applications, [kernel, stdlib]},
   {modules, []},
-  {mod, {dcn, []}},
+  {mod, {org, []}},
   {registered, []}
  ]
 }.
