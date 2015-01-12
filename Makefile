@@ -13,9 +13,12 @@ DIALYZER_DIRS := ebin/
 DIALYZER_OPTS := --verbose --statistics -Werror_handling \
                  -Wrace_conditions #-Wunmatched_returns
 
+ERLC_OPTS ?= +debug_info +warn_export_vars +warn_shadow_vars \
+	+warn_obsolete_guard # +bin_opt_info +warn_export_all +warn_missing_spec
+ERLC_OPTS += +'{parse_transform, lager_transform}' +debug_info
+
 include erlang.mk
 
-ERLC_OPTS += +'{parse_transform, lager_transform}' +debug_info
 
 CT_OPTS = -cover test/dcn.coverspec -erl_args -config ${CONFIG}
 TEST_ERLC_OPTS += +'{parse_transform, lager_transform}' +debug_info
