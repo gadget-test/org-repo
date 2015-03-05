@@ -19,7 +19,6 @@ ERLC_OPTS += +'{parse_transform, lager_transform}' +debug_info
 
 include erlang.mk
 
-
 CT_OPTS = -cover test/dcn.coverspec -erl_args -config ${CONFIG}
 TEST_ERLC_OPTS += +'{parse_transform, lager_transform}' +debug_info
 
