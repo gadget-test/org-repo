@@ -17,10 +17,11 @@ start() -> application:ensure_all_started(org).
 stop() -> application:stop(org).
 
 -spec start(atom(), any()) -> {ok, pid()} | {error, term()}.
-start(normal, _Args) -> {ok, self()}.
+start(normal, _Args) ->
+  lager:alert("Application ~p starting", [?MODULE]),
+  {ok, self()}.
 
 -spec stop(atom()) -> ok.
-stop(_State) -> ok.
-
-%something(Wrong) -> Here.
-%% LOOK MA, A VERY VERY VERY LONG LINE WITH ALL CAPS AND REALLY NO MEANING AT ALL
+stop(_State) ->
+  lager:alert("Application ~p stopping", [?MODULE]),
+  ok.
