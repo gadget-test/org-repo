@@ -11,7 +11,7 @@ dep_katana = git git://github.com/inaka/erlang-katana 0.2.0
 
 DIALYZER_DIRS := ebin/
 DIALYZER_OPTS += --verbose --statistics -Werror_handling \
-                 -Wrace_conditions #-Wunmatched_returns
+                 -Wrace_conditions
 
 ERLC_OPTS ?= +debug_info +warn_export_vars +warn_shadow_vars \
 	+warn_obsolete_guard # +bin_opt_info +warn_export_all +warn_missing_spec
