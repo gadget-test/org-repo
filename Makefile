@@ -2,9 +2,8 @@ PROJECT = org
 
 CONFIG ?= config/test.config
 
-DEPS = eper sync katana lager
+DEPS = eper katana lager
 
-dep_sync = git git://github.com/inaka/sync.git 0.1.3
 dep_lager = git git://github.com/basho/lager.git 2.1.0
 dep_eper = git git://github.com/massemanet/eper.git 0.90.0
 dep_katana = git git://github.com/inaka/erlang-katana 0.2.0
