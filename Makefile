@@ -20,7 +20,7 @@ include erlang.mk
 CT_OPTS = -cover test/dcn.coverspec -erl_args -config ${CONFIG}
 TEST_ERLC_OPTS += +'{parse_transform, lager_transform}' +debug_info
 
-SHELL_OPTS = -name ${PROJECT}@`hostname` -s lager -s ${PROJECT} -s sync
+SHELL_OPTS = -name ${PROJECT}@`hostname` -s ${PROJECT} -s sync
 
 quicktests: app build-ct-suites
 	@if [ -d "test" ] ; \
