@@ -1,8 +1,7 @@
 PROJECT = org
 
-DEPS = eper sync katana lager
+DEPS = eper katana lager
 
-dep_sync = git git://github.com/inaka/sync.git 0.1.3
 dep_lager = git git://github.com/basho/lager.git 2.1.1
 dep_eper = git git://github.com/massemanet/eper.git 0.90.0
 dep_katana = git git://github.com/inaka/erlang-katana 0.2.4
@@ -20,7 +19,7 @@ include erlang.mk
 CT_OPTS = -cover test/dcn.coverspec -erl_args -config ${CONFIG}
 TEST_ERLC_OPTS += +'{parse_transform, lager_transform}' +debug_info
 
-SHELL_OPTS = -name ${PROJECT}@`hostname` -s ${PROJECT} -s sync
+SHELL_OPTS = -name ${PROJECT}@`hostname` -s ${PROJECT}
 
 quicktests: app build-ct-suites
 	@if [ -d "test" ] ; \
